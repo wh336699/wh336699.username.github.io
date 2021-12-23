@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+<body>
+    <script src="login.js"></script>
+    <div class="content">
+        <div class="cont">
+            <div class="left">
+                <div class="logo">
+                    <span class="title">lab8</span><br/>
+                    <span class="describe">Информационная система по оценке кредитных рисков заемщиков</span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="rightCell">
+                    <div class="login">
+                        <ul>
+                            <li><sapn class="loginTiTle">Логин пользователя</sapn></li>
+                            <li class="inputLi"><div class="userName_logo"></div><input id="userName" class="input" type="text" onclick="getPassword(this)"/></li>
+                            <li class="inputLi"><div class="passWord_logo"></div><input id="passWord" class="input" type="password"/></li>
+                            <br/><br/>
+                            <li><input type="button" class="btnLi" value="Авторизоваться" onclick="login()"/></li>
+                            <li><input type="button" class="btnLi" value="регистр" onclick="goRegister()"/></li>
 
-You can use the [editor on GitHub](https://github.com/wh336699/wh336699.username.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer">
+        </div>
+    </div>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wh336699/wh336699.username.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</body>
