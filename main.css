@@ -1,0 +1,222 @@
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+    }
+    .left{
+        width: 20%;
+        height: 100%;
+        background-color: #202a2d;
+        float: left;
+    }
+    .left .t{
+        margin: 20%;
+    }
+    .left .t div{
+        color: #fda408;
+        text-align: center;
+    }
+    .left .t .uimg{
+        margin: 15%;
+        border: 2px solid white;
+        border-radius:100%;
+    }
+    .left .t .us{
+        color: white;
+    }
+
+    .right{
+        width: 80%;
+        height: 100%;
+        float: right;
+        overflow: hidden;
+    }
+    .right .top{
+        width: 100%;
+        height: 6%;
+        background-color: #334149;
+        float: left;
+        overflow: hidden;
+    }
+    .right .top .lie{
+        height: 100%;
+        width:15%;
+        margin-right:5%;
+        line-height: 350%;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+        float: left;
+    }
+    .right .top .lie:hover{
+        background-color: orange;
+        font-size: 18px;
+        line-height: 50px;
+        transition: all 0.2s ;
+    }
+    .right .top img{
+        width: 2%;
+        margin: 15px;
+        float: right;
+        cursor: pointer;
+    }
+
+    .right .top img:hover{
+        opacity: 0.8;
+    }
+
+    .right .toolbar{
+        width: 100%;
+        height: 6%;
+        background-color: #f5b702;
+        float: left;
+        overflow: hidden;
+    }
+    .right .tableBar{
+        width: 100%;
+        height: 6%;
+        background-color: #3d3d3d;
+        float: left;
+        overflow: hidden;
+        position: relative;
+    }
+    .right .tableBar div{
+        height: 75%;
+        width:8%;
+        margin-left:2%;
+        margin-right:2%;
+        margin-top: 1.3%;
+        line-height: 220%;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+        border: 2px solid black;
+        background-color: rgba(61, 61, 61, 0.8);
+        box-shadow: 10px 10px 10px black;
+        border-radius: 8px;
+        float: left;
+        transition: all 0.15s;
+        position: relative;
+    }
+
+    .right .tableBar .lieTablespan{
+        display: inline-block;
+    }
+
+    .right .tableBar .exit{
+        height: 100%;
+        width: 10%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: red;
+    }
+
+    .right .tableBar div:hover{
+        opacity: 0.5;
+    }
+
+    .right .content{
+        width:100%;
+        height: 82%;
+    }
+    .right .content img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-repeat: no-repeat;
+    }
+
+    .container:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .content .page{
+        width: 100%;
+        height: 100%;
+    }
+
+    #customer{
+        background-color: #b3b3b3;
+    }
+    .changePassword{
+        width: 400px;
+        height: 450px;
+        font-weight: bolder;
+        position: absolute;
+        border-radius: 10px;
+        left: 36%;
+        top: 110px;
+        border: 2px solid black;
+        overflow: hidden;
+    }
+
+    .changePassword .top{
+        width: 100%;
+        height: 8%;
+        background-color: #464646;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .changePassword .top .close{
+        height: 60%;
+        width: 5%;
+        background-size: cover;
+        position: absolute;
+        right: 2%;
+        top: 20%;
+        cursor: pointer;
+    }
+
+    .changePassword .cont{
+        width: 100%;
+        height: 92%;
+        border-radius: 8px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.95;
+        overflow: hidden;
+    }
+
+    .changePassword .conttable{
+        margin: 80px auto;
+        text-align: center;
+    }
+
+    .changePassword .conttable tr{
+        height: 35px;
+        line-height: 50px;
+    }
+
+    .changePassword .conttable input{
+        width: 150px;
+        height: 28px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .changePassword .conttable .set{
+        width: 76%;
+        height:40px;
+        background-color: #1a1402;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        font-weight: bolder;
+        letter-spacing: 5px;
+        text-align: center;
+        margin-top: 60px;
+    }

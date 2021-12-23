@@ -1,0 +1,455 @@
+
+<link rel="stylesheet" href="main.css">
+<div class="container" id="container">
+ 
+    <div class="left">
+ 
+        <div class="t">
+ 
+            <div>Информационная система по оценке кредитных рисков заемщиков</div>
+ 
+ 
+            <div class="us"></div>
+ 
+        </div>
+ 
+    </div>
+ 
+    <div class="right">
+ 
+        <div class="top">
+ 
+            <div class="lie" onclick="getPage(1)">информации</div>
+ 
+
+ 
+ 
+ 
+        </div>
+ 
+        <div class="toolbar"></div>
+ 
+        <div class="tableBar">
+ 
+            <div class="lieTable" id="customer">
+ 
+                <span onclick="changePage(this)">информации </span>
+ 
+                <div class="exit" onclick="exit(this)"></div>
+ 
+            </div>
+ 
+            
+ 
+        </div>
+ 
+        <div class="content">
+ 
+            <iframe class="page" src="homePage_1.html" frameborder="0"></iframe>
+ 
+            <!--<img src="img/none-box.png" alt="图片加载失败!"/>-->
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+ 
+    <div class="changePassword" id="changePassword" style="display:none;" >
+ 
+        <div class="top" id="changePasswordTop">
+ 
+            <div class="close" onclick="changeSate('changePassword')"></div>
+ 
+        </div>
+ 
+        <div class="cont">
+ 
+            <form action="">
+ 
+                <table width="80%">
+ 
+                    <tr>
+ 
+                        <td><span>原密码</span></td>
+ 
+                        <td><input type="text" id="oPw"/></td>
+ 
+                    </tr>
+ 
+ 
+ 
+                    <tr>
+ 
+                        <td><span>新密码</span></td>
+ 
+                        <td><input type="text" id="nPw"/></td>
+ 
+                    </tr>
+ 
+ 
+ 
+                    <tr>
+ 
+                        <td><span>确认密码</span></td>
+ 
+                        <td><input type="text" id="qPw"/></td>
+ 
+                    </tr>
+ 
+ 
+ 
+                    <tr>
+ 
+                        <td><input class="set" type="reset"/></td>
+ 
+                        <td><input class="set" type="reset" value="确定" onclick="changeThePassWord()"/></td>
+ 
+                    </tr>
+ 
+                </table>
+ 
+ 
+ 
+            </form>
+ 
+        </div>
+ 
+    </div>
+ 
+ 
+ 
+</div>
+<script>
+ 
+    var myX=0;
+ 
+    var myY=0;
+ 
+    var go=false;
+ 
+    var changePassword;
+ 
+    var offsetx=0;
+ 
+    var offsety=0;
+ 
+ 
+ 
+    document.onmousemove=function(e){
+ 
+        var cont=document.getElementById("container");
+ 
+ 
+ 
+        myX= e.clientX;
+ 
+        myY= e.clientY;
+ 
+        if(go){
+ 
+            changePassword.style.left=myX-offsetx+"px";
+ 
+            changePassword.style.top=myY-offsety+"px";
+ 
+ 
+ 
+            //限定位置
+ 
+            if(parseFloat(changePassword.style.left)<0)changePassword.style.left=0+"px";
+ 
+            if(parseFloat(changePassword.style.top)<0)changePassword.style.top=0+"px";
+ 
+            if(parseFloat(parseFloat(changePassword.style.left)+changePassword.offsetWidth)>cont.offsetWidth){
+ 
+                changePassword.style.left=cont.offsetWidth-changePassword.offsetWidth+"px";
+ 
+            }
+ 
+            if(parseFloat(parseFloat(changePassword.style.top)+changePassword.offsetHeight)>cont.offsetHeight-30){
+ 
+                changePassword.style.top=cont.offsetHeight-changePassword.offsetHeight-30+"px";
+ 
+            }
+ 
+        }
+ 
+    };
+ 
+ 
+ 
+    document.onmouseup=function(){
+ 
+        go=false;
+ 
+    };
+ 
+ 
+ 
+    window.onload=function(){
+ 
+        initUserInfo();
+ 
+ 
+ 
+        changePassword=document.getElementById("changePassword");
+ 
+        var changePasswordTop=document.getElementById("changePasswordTop");
+ 
+ 
+ 
+        //鼠标按下
+ 
+        changePassword.onmousedown=function(e){
+ 
+            if(e.target==changePasswordTop){
+ 
+                go=true;
+ 
+                offsetx= e.offsetX;
+ 
+                offsety= e.offsetY;
+ 
+            }
+ 
+        };
+ 
+ 
+ 
+        //失去焦点
+ 
+        changePassword.onblur=function(){
+ 
+            go=false;
+ 
+        };
+ 
+ 
+ 
+ 
+ 
+        if(!sessionStorage.userName){
+ 
+            location.assign("login.html");
+ 
+        }
+ 
+    };
+ 
+ 
+ 
+    function initUserInfo(){
+ 
+        var user=document.getElementsByClassName("us")[0];
+ 
+        str="пользователя:";
+ 
+        str+=sessionStorage.userName||"";
+ 
+        user.innerHTML=str;
+ 
+    }
+ 
+ 
+ 
+    function getPage(index){
+ 
+        var page=document.getElementsByClassName("page")[0];
+ 
+        var lieTables=document.getElementsByClassName("lieTable");
+ 
+ 
+ 
+        clear();
+ 
+        lieTables[0].src="homePage_1.html";
+ 
+        lieTables[1].src="homePage_2.html";
+ 
+        lieTables[2].src="homePage_3.html";
+ 
+ 
+ 
+        var src;
+ 
+        switch (index){
+ 
+            case 1:
+ 
+                src="homePage_1.html";
+ 
+ 
+ 
+                lieTables[0].style.display="block";
+ 
+                lieTables[0].style.backgroundColor="#b3b3b3";
+ 
+                break;
+ 
+            case 2:
+ 
+                src="homePage_2.html";
+ 
+                lieTables[1].style.display="block";
+ 
+                lieTables[1].style.backgroundColor="#b3b3b3";
+ 
+                break;
+ 
+            case 3:
+ 
+                src="homePage_3.html";
+ 
+                lieTables[2].style.display="block";
+ 
+                lieTables[2].style.backgroundColor="#b3b3b3";
+ 
+                break;
+ 
+        }
+ 
+        page.src=src;
+ 
+    }
+ 
+ 
+ 
+    //清除tableBar的颜色
+ 
+    function clear(){
+ 
+        var lieTables=document.getElementsByClassName("lieTable");
+ 
+ 
+ 
+        for(var i=0;i<lieTables.length;i++){
+ 
+            lieTables[i].style.backgroundColor="rgba(61, 61, 61, 0.8)";
+ 
+        }
+ 
+    }
+ 
+ 
+ 
+    function exit(cell){
+ 
+        var page=document.getElementsByClassName("page")[0];
+ 
+        if(cell.parentNode.previousElementSibling){
+ 
+            clear();
+ 
+ 
+ 
+            cell.parentNode.previousElementSibling.style.backgroundColor="#b3b3b3";
+ 
+            page.src=cell.parentNode.previousElementSibling.src;
+ 
+            cell.parentNode.style.display="none";
+ 
+        }
+ 
+    }
+ 
+ 
+ 
+    function changePage(cell){
+ 
+        getPage();
+ 
+        var page=document.getElementsByClassName("page")[0];
+ 
+ 
+ 
+        clear();
+ 
+ 
+ 
+        cell.parentNode.style.backgroundColor="#b3b3b3";
+ 
+        page.src=cell.parentNode.src;
+ 
+    }
+ 
+ 
+ 
+    function quit(){
+ 
+        sessionStorage.clear();
+ 
+        location.assign("login.html");
+ 
+    }
+ 
+ 
+ 
+    //控制弹窗的状态
+ 
+    function changeSate(id){
+ 
+        var cell=document.getElementById(id);
+ 
+        if(cell.style.display=="none"){
+ 
+            cell.style.display="block";
+ 
+        }else{
+ 
+            cell.style.display="none";
+ 
+        }
+ 
+    }
+ 
+ 
+ 
+    function changeThePassWord(){
+ 
+        var userName=sessionStorage.userName;
+ 
+        var oPw=document.getElementById("oPw").value;
+ 
+        var nPw=document.getElementById("nPw").value;
+ 
+        var qPw=document.getElementById("qPw").value;
+ 
+ 
+ 
+        var userArrayStr=localStorage.userInfo||"";
+ 
+        userArray=eval("("+userArrayStr+")");
+ 
+ 
+ 
+        var j=0;
+ 
+        for(var j=0;j<userArray.length;j++){
+ 
+            if((userName==userArray[j].userName)&&(oPw==userArray[j].passWord)&&(qPw==nPw)){
+ 
+                userArray[j].passWord=nPw;
+ 
+                var str=JSON.stringify(userArray);
+ 
+                localStorage.userInfo=str;
+ 
+                changeSate("changePassword");
+ 
+                break;
+ 
+            }
+ 
+        }
+ 
+        if(j>=userArray.length){
+ 
+            alert("信息错误!");
+ 
+        }
+ 
+    }
+ 
+ 
+ 
+</script>
